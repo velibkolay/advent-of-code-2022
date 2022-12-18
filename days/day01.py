@@ -1,4 +1,4 @@
-input_day1 = open("../inputs/input_day1.txt").read()
+input_day1 = open("../inputs/input_day01.txt").read()
 
 elves = input_day1.split("\n\n")
 
@@ -22,4 +22,3 @@ print(elves_calories[0])
 print(elves_calories[1])
 print(elves_calories[2])
 print(sum(elves_calories[0:3]))
-
