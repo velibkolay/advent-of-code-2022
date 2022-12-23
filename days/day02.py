@@ -14,21 +14,23 @@ class Result(IntEnum):
 
 
 def enum_match(letter):
-    if letter == "A" or letter == "X":
-        return Move.ROCK
-    elif letter == "B" or letter == "Y":
-        return Move.PAPER
-    elif letter == "C" or letter == "Z":
-        return Move.SCISSORS
+    match letter:
+        case "A" | "X":
+            return Move.ROCK
+        case "B" | "Y":
+            return Move.PAPER
+        case "C" | "Z":
+            return Move.SCISSORS
 
 
 def result_match(letter):
-    if letter == "Z":
-        return Result.WIN
-    elif letter == "Y":
-        return Result.DRAW
-    else:
-        return Result.LOSE
+    match letter:
+        case "Z":
+            return Result.WIN
+        case "Y":
+            return Result.DRAW
+        case "X":
+            return Result.LOSE
 
 
 def game_point_move(my_move: Move, opponents_move: Move):
