@@ -1,3 +1,5 @@
+import numpy as np
+
 def get_priority(char: str):
     if char.isupper():
         return ord(char) - 38
@@ -16,3 +18,16 @@ for rucksack in rucksacks:
     sum_priority += get_priority(intersection.pop())
 
 print(sum_priority)
+
+# part 2
+
+sum_priority_group = 0
+
+# three-elf group
+groups = list(zip(*(iter(rucksacks),) * 3))
+
+for group in groups:
+    intersection = set(group[0]).intersection(group[1]).intersection(group[2])
+    sum_priority_group += get_priority(intersection.pop())
+
+print(sum_priority_group)
